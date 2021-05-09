@@ -1,18 +1,12 @@
 #include<iostream>
+#include<primary.h>
 using namespace std;
 
-/*
-пробелы
-регистр
-скобки
-*
-*/
 
-/* Ввод: строка
-Вывод: строка без пробелов, лишних скобок, символов *, с буквами в одном регистре */
+
 string InputCleaner(string str) {
 
-	for (int i = 0; &(str[i]) != nullptr; i++) {
+	for (int i = 0; str[i] != '\n'; i++) {
 
 		if ((str[i] == ' ') or (str[i] == '*')) { // пробелы и символы
 
@@ -36,14 +30,20 @@ string InputCleaner(string str) {
 
 string delete_char(string str, int index) {
 
-	for (int i = index; i < str.length - 1; i++) {
+	for (int i = index; i < str.length() - 1; i++) {
 
 		str[i] = str[i + 1];
 
 	}
-	delete str[str.length - 1];
 
-	return str;
+	string str_twin = "";
+	for (int i = 0; i < str.length() - 1; i++) {
+
+		str_twin[i] = str[i];
+
+	}
+
+	return str_twin;
 }
 
 string change_reg(string str, int index) {
@@ -56,8 +56,9 @@ string change_reg(string str, int index) {
 int bracket_search(string str, int index) {
 
 	int unpaired_counter = 1;
+	int result = 0;
 
-	for (int i = index; i < str.length; i++) {
+	for (int i = index; i < str.length(); i++) {
 
 		if (str[i] == '(') {
 			unpaired_counter++;
@@ -67,13 +68,11 @@ int bracket_search(string str, int index) {
 		}
 
 		if (unpaired_counter == 0) {
-			return i;
+			result = i;
+			break;
 		}
 
 	}
 
+	return result;
 }
-
-/* Ввод: строка
-Вывод: код ошибки ввода */
-int InputCorrect(string a) {}

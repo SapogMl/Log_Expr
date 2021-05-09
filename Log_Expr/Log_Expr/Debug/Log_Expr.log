@@ -1,0 +1,5 @@
+﻿  primary.cpp
+d:\прога\log_expr\log_expr\log_expr\primary.cpp(33): warning C4018: <: несоответствие типов со знаком и без знака
+d:\прога\log_expr\log_expr\log_expr\primary.cpp(40): warning C4018: <: несоответствие типов со знаком и без знака
+d:\прога\log_expr\log_expr\log_expr\primary.cpp(61): warning C4018: <: несоответствие типов со знаком и без знака
+  Log_Expr.vcxproj -> D:\ПРОГА\Log_Expr\Log_Expr\Debug\Log_Expr.exe
